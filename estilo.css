@@ -29,6 +29,12 @@
   padding: 10px 20px 10px 20px;
 }
 
+.Iniciar:active{
+  
+  background: lightgray;
+  font-size: 50px;
+}
+
 .tela-pergunta {
   width: 100%;
   height:100vh;
@@ -51,7 +57,7 @@
   padding: 30px 20px 30px 20px;
   margin: 0 auto;
   border-radius: 20%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .botao-responder {
@@ -59,7 +65,7 @@
   padding: 10px 40px 10px 40px;
   font-size: 25px;
   border: none;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .botao-responder:active{
@@ -67,4 +73,26 @@
   background: lightgray;
   font-size: 50px;
 }
+.tela-acertou {
+  width: 100%;
+  height: 100vh;
+  background: royalblue;
+  text-align: center;
+}
+.acertou {
+  width: 90%;
+  margin-top: 60%;
+}
 
+.tela-errou {
+  background: royalblue;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.errou {
+  width: 80%;
+  margin-top: 50%;
+  
+}
