@@ -64,7 +64,32 @@ function Iniciarjogo() {
 }
 
 function mostrarPergunta() {
-  pergunta = listaPerguntas [0]
-  
+  objPergunta = listaPerguntas [1];
+
+  textoPergunta = document.createTextNode(objPergunta.pergunta);
+  divPergunta = document.querySelector(".pergunta");
+  divPergunta.appendChild(textoPergunta);
+
+  txtopcao1 = document.createTextNode(objPergunta.opcoes[0]);
+  botao0 = document.querySelector(".opcao0");
+  botao0.appendChild(txtopcao1);
+
+  txtopcao2 = document.createTextNode(objPergunta.opcoes[1]);
+  botao1 = document.querySelector(".opcao1");
+  botao1.appendChild(txtopcao2);
+
+  txtopcao3 = document.createTextNode(objPergunta.opcoes[2]);
+  botao0 = document.querySelector(".opcao2");
+  botao0.appendChild(txtopcao3);
+
+  txtopcao4 = document.createTextNode(objPergunta.opcoes[3]);
+  botao0 = document.querySelector(".opcao3");
+  botao0.appendChild(txtopcao4);
+
+
+
+
+  objPergunta.opcoes[0]
   console.log(pergunta)
+  
 }
