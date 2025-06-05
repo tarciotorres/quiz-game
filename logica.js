@@ -45,20 +45,64 @@ listaPerguntas = [
   },
 ]
   
-Pergunta = null
+objPergunta = null;
 
+telaInical = document.querySelector(".tela-inicial")
+telaPergunta = document.querySelector(".tela-pergunta")
+telaAcertou = document.querySelector(".tela-acertou")
+telaErrou = document.querySelector(".tela-errou")
 
+btnIniciar = document .querySelector(".Iniciar");
+btnIniciar.addEventListener("click" , Iniciarjogo);
 
-btnIniciar = document .querySelector(".Iniciar")
+divPergunta = document.querySelector(".pergunta");
 
-btnIniciar.addEventListener("click" , Iniciarjogo)
+botao0 = document.querySelector(".opcao0");
+botao1 = document.querySelector(".opcao1");
+botao2 = document.querySelector(".opcao2");
+botao3 = document.querySelector(".opcao3");
+
+telaAcertou.addEventListener("click" , () => {
+  telaAcertou.style.display = "none"
+  Iniciarjogo()
+})
+
+botao0.addEventListener("click", () => {
+  if (objPergunta.correta == 0) {
+    mostrarAcertou()
+  } else {
+    mostrarErrou()
+  }
+})
+
+botao1.addEventListener("click", () => {
+  if (objPergunta.correta == 1) {
+    mostrarAcertou()
+  } else {
+    mostrarErrou()
+  }
+})
+
+botao2.addEventListener("click", () => {
+  if (objPergunta.correta == 2) {
+    mostrarAcertou()
+  } else {
+    mostrarErrou()
+  }
+})
+
+botao3.addEventListener("click", () => {
+  if (objPergunta.correta == 3) {
+    mostrarAcertou()
+  } else {
+    mostrarErrou()
+  }
+})
 
 function Iniciarjogo() {
-  telaInical = document.querySelector(".tela-inicial")
-  telaInical.style.display = "none"
-  
-  telaPergunta = document.querySelector(".tela-pergunta")
-  telaPergunta.style.display = "block"
+
+  telaInical.style.display = "none";
+  telaPergunta.style.display = "block";
   
   mostrarPergunta()
 }
@@ -67,29 +111,38 @@ function mostrarPergunta() {
   objPergunta = listaPerguntas [1];
 
   textoPergunta = document.createTextNode(objPergunta.pergunta);
-  divPergunta = document.querySelector(".pergunta");
+  
   divPergunta.appendChild(textoPergunta);
 
   txtopcao1 = document.createTextNode(objPergunta.opcoes[0]);
-  botao0 = document.querySelector(".opcao0");
+  
   botao0.appendChild(txtopcao1);
 
   txtopcao2 = document.createTextNode(objPergunta.opcoes[1]);
-  botao1 = document.querySelector(".opcao1");
+  
   botao1.appendChild(txtopcao2);
 
   txtopcao3 = document.createTextNode(objPergunta.opcoes[2]);
-  botao0 = document.querySelector(".opcao2");
-  botao0.appendChild(txtopcao3);
+  
+  botao2.appendChild(txtopcao3);
 
   txtopcao4 = document.createTextNode(objPergunta.opcoes[3]);
-  botao0 = document.querySelector(".opcao3");
-  botao0.appendChild(txtopcao4);
+  
+  botao3.appendChild(txtopcao4);
 
 
 
 
   objPergunta.opcoes[0]
   console.log(pergunta)
-  
+} 
+
+function mostrarAcertou() {
+  telaPergunta.style.display = "none"
+  telaAcertou.style.display = "block"
+}
+
+function mostrarErrou() {
+  telaPergunta.style.display = "none"
+  telaErrou.style.display = "block"
 }
