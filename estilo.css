@@ -12,7 +12,6 @@
   height: 100vh;
   background: royalblue;
   text-align: center;
-  margin-top: 110px;
 }
 
 .logo {
@@ -86,7 +85,7 @@
 }
 
 .tela-errou {
-  background: royalblue;
+  background: red;
   width: 100%;
   height: 100vh;
   text-align: center;
