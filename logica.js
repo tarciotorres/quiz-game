@@ -62,9 +62,18 @@ botao1 = document.querySelector(".opcao1");
 botao2 = document.querySelector(".opcao2");
 botao3 = document.querySelector(".opcao3");
 
+perguntaAtual = 0
+
+
 telaAcertou.addEventListener("click" , () => {
   telaAcertou.style.display = "none"
   Iniciarjogo()
+})
+
+telaErrou.addEventListener("click", () => {
+  telaErrou.style.display = "none"
+  telaInical.style.display = "block"
+  perguntaAtual = 0
 })
 
 botao0.addEventListener("click", () => {
@@ -108,26 +117,26 @@ function Iniciarjogo() {
 }
 
 function mostrarPergunta() {
-  objPergunta = listaPerguntas [1];
+  objPergunta = listaPerguntas [perguntaAtual];
 
   textoPergunta = document.createTextNode(objPergunta.pergunta);
-  
+  divPergunta.innerHTML = ""
   divPergunta.appendChild(textoPergunta);
 
   txtopcao1 = document.createTextNode(objPergunta.opcoes[0]);
-  
+  botao0.innerHTML = ""
   botao0.appendChild(txtopcao1);
 
   txtopcao2 = document.createTextNode(objPergunta.opcoes[1]);
-  
+  botao1.innerHTML = ""
   botao1.appendChild(txtopcao2);
 
   txtopcao3 = document.createTextNode(objPergunta.opcoes[2]);
-  
+  botao2.innerHTML = ""
   botao2.appendChild(txtopcao3);
 
   txtopcao4 = document.createTextNode(objPergunta.opcoes[3]);
-  
+  botao3.innerHTML = ""
   botao3.appendChild(txtopcao4);
 
 
@@ -140,6 +149,7 @@ function mostrarPergunta() {
 function mostrarAcertou() {
   telaPergunta.style.display = "none"
   telaAcertou.style.display = "block"
+  perguntaAtual++
 }
 
 function mostrarErrou() {
