@@ -51,6 +51,8 @@ telaInical = document.querySelector(".tela-inicial")
 telaPergunta = document.querySelector(".tela-pergunta")
 telaAcertou = document.querySelector(".tela-acertou")
 telaErrou = document.querySelector(".tela-errou")
+telaFinal = document.querySelector(".tela-final");
+
 
 btnIniciar = document .querySelector(".Iniciar");
 btnIniciar.addEventListener("click" , Iniciarjogo);
@@ -112,6 +114,10 @@ function Iniciarjogo() {
 
   telaInical.style.display = "none";
   telaPergunta.style.display = "block";
+  telaAcertou.style.display = "none";
+  telaErrou.style.display = "none";
+  telaFinal.style.display = "none";
+
   
   mostrarPergunta()
 }
@@ -148,11 +154,24 @@ function mostrarPergunta() {
 
 function mostrarAcertou() {
   telaPergunta.style.display = "none"
-  telaAcertou.style.display = "block"
   perguntaAtual++
+  
+   if (perguntaAtual + 1 < listaPerguntas.length) {
+    telaAcertou.style.display = "block";
+  } else {
+    mostrarTelaFinal();
+  }
 }
 
 function mostrarErrou() {
   telaPergunta.style.display = "none"
   telaErrou.style.display = "block"
 }
+
+function mostrarTelaFinal() {
+  telaPergunta.style.display = "none";
+  telaAcertou.style.display = "none";
+  telaErrou.style.display = "none";
+  telaFinal.style.display = "block";
+}
+
