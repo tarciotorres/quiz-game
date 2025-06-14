@@ -54,7 +54,7 @@ telaErrou = document.querySelector(".tela-errou")
 telaFinal = document.querySelector(".tela-final");
 
 
-btnIniciar = document .querySelector(".Iniciar");
+btnIniciar = document.querySelector(".Iniciar");
 btnIniciar.addEventListener("click" , Iniciarjogo);
 
 divPergunta = document.querySelector(".pergunta");
