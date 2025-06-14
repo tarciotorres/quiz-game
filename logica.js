@@ -70,6 +70,7 @@ perguntaAtual = 0
 telaAcertou.addEventListener("click" , () => {
   telaAcertou.style.display = "none"
   Iniciarjogo()
+  
 })
 
 telaErrou.addEventListener("click", () => {
@@ -154,9 +155,9 @@ function mostrarPergunta() {
 
 function mostrarAcertou() {
   telaPergunta.style.display = "none"
-  perguntaAtual++
   
    if (perguntaAtual + 1 < listaPerguntas.length) {
+     perguntaAtual++
     telaAcertou.style.display = "block";
   } else {
     mostrarTelaFinal();
