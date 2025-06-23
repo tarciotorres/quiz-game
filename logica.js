@@ -69,7 +69,8 @@ perguntaAtual = 0
 
 telaAcertou.addEventListener("click" , () => {
   telaAcertou.style.display = "none"
-  Iniciarjogo()
+  if (perguntaAtual == 4) {mostrarTelaFinal()}
+  else {Iniciarjogo()}
   
 })
 
@@ -78,6 +79,12 @@ telaErrou.addEventListener("click", () => {
   telaInical.style.display = "block"
   perguntaAtual = 0
 })
+
+telaFinal.addEventListener("click", () => {
+  telaFinal.style.display = "none"
+  telaInical.style.display = "block"
+  perguntaAtual = 0 }
+)
 
 botao0.addEventListener("click", () => {
   if (objPergunta.correta == 0) {
@@ -156,12 +163,8 @@ function mostrarPergunta() {
 function mostrarAcertou() {
   telaPergunta.style.display = "none"
   
-   if (perguntaAtual + 1 < listaPerguntas.length) {
-     perguntaAtual++
-    telaAcertou.style.display = "block";
-  } else {
-    mostrarTelaFinal();
-  }
+  telaAcertou.style.display = "block"
+  perguntaAtual++
 }
 
 function mostrarErrou() {
@@ -170,9 +173,6 @@ function mostrarErrou() {
 }
 
 function mostrarTelaFinal() {
-  telaPergunta.style.display = "none";
-  telaAcertou.style.display = "none";
-  telaErrou.style.display = "none";
   telaFinal.style.display = "block";
 }
 
