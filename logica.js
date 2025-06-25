@@ -69,8 +69,12 @@ perguntaAtual = 0
 
 telaAcertou.addEventListener("click" , () => {
   telaAcertou.style.display = "none"
-  if (perguntaAtual == 4) {mostrarTelaFinal()}
-  else {Iniciarjogo()}
+  if (perguntaAtual == 4) {
+    mostrarTelaFinal()
+  }
+  else {
+    Iniciarjogo()
+  }
   
 })
 
@@ -173,6 +177,7 @@ function mostrarErrou() {
 }
 
 function mostrarTelaFinal() {
+  telaPergunta.style.display = "none";
   telaFinal.style.display = "block";
 }
 
